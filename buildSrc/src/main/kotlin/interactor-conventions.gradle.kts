@@ -1,0 +1,7 @@
+plugins{
+    checkstyle
+}
+
+repositories {
+    gradlePluginPortal()
+}
