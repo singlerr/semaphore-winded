@@ -1,3 +1,5 @@
-<module name ="Checker">
-
+<module name="Checker">
+    <module name="TreeWalker">
+        <module name="AvoidStarImport"/>
+    </module>
 </module>
