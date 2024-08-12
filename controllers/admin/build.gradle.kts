@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "io.github.singlerr.semaphore"
+group = "io.github.singlerr.semaphore.presenter"
 version = "unspecified"
 
 repositories {

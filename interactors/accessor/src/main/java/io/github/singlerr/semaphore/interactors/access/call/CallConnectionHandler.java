@@ -1,6 +1,6 @@
 package io.github.singlerr.semaphore.interactors.access.call;
 
-public interface CallHandler {
+public interface CallConnectionHandler {
 
     CallConnection open(int callerId, int calleeId);
 

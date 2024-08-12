@@ -15,6 +15,6 @@ include("views:admin")
 include("views:callee")
 include("views:caller")
 
-
 include("datagateways")
 include("callhandler")
+include("controllers:admin")
