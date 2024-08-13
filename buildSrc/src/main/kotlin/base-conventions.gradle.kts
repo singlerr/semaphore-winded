@@ -8,7 +8,7 @@ plugins{
     id("java")
 }
 
-version = System.getProperty("BUILD_NUMBER","999")
+version = System.getenv()["BUILD_NUMBER"] ?: "999"
 
 repositories {
     gradlePluginPortal()
