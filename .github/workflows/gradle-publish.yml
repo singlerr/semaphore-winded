@@ -28,8 +28,6 @@ jobs:
     - name: Set Gradle Permission
       run: chmod +x gradlew
     - name: Build with Gradle
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
       run: ./gradlew build
     - name: Publish to GitHub Packages
       run: ./gradlew publish
