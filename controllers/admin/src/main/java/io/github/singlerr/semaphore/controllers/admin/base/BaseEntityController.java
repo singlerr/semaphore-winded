@@ -1,13 +1,13 @@
-package io.github.singlerr.semaphore.interactors.admin.controller.base;
+package io.github.singlerr.semaphore.controllers.admin.base;
 
+import io.github.singlerr.semaphore.interactors.access.call.CallState;
 import io.github.singlerr.semaphore.interactors.admin.AdminInteractor;
 import io.github.singlerr.semaphore.interactors.admin.controller.EntityController;
 import io.github.singlerr.semaphore.interactors.admin.controller.data.EntityQuery;
 import io.github.singlerr.semaphore.interactors.admin.manager.EntityManager;
 import io.github.singlerr.semaphore.interactors.admin.manager.data.CallableEntity;
-import io.github.singlerr.semaphore.interactors.admin.presenter.data.ErrorEntity;
-import io.github.singlerr.semaphore.interactors.access.call.CallState;
 import io.github.singlerr.semaphore.interactors.admin.presenter.EntityPresenter;
+import io.github.singlerr.semaphore.interactors.admin.presenter.data.ErrorEntity;
 import io.github.singlerr.semaphore.interactors.admin.presenter.data.PresentableEntity;
 
 public abstract class BaseEntityController implements EntityController {

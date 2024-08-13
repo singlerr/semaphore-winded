@@ -1,19 +1,8 @@
 plugins {
-    id("java")
+    id("controller-conventions")
 }
 
-group = "io.github.singlerr.semaphore.presenter"
-version = "unspecified"
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-}
-
-tasks.test {
-    useJUnitPlatform()
+dependencies{
+    implementation(project(":interactors:accessor"))
+    implementation(project(":interactors:admin"))
 }

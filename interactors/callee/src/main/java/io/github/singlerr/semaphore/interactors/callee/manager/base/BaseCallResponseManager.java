@@ -19,13 +19,4 @@ public abstract class BaseCallResponseManager implements CallResponseManager {
         this.errorPresenter = interactor.getErrorPresenter();
         this.callConnectionHandler = callConnectionHandler;
     }
-
-    @Override
-    public void reply(int callerId, int calleeId, ResponseType type) {
-        if(database.getById(calleeId) == null || database.getById(calleeId) == null){
-            errorPresenter.error(new Error(calleeId, callerId, "온라인이 아닙니다."));
-            return;
-        }
-
-    }
 }
