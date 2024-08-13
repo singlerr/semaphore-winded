@@ -8,7 +8,7 @@ plugins{
     `maven-publish`
     id("java")
 }
-
+group = "io.github.singlerr.semaphore"
 version = System.getProperty("BUILD_NUMBER", "999")
 
 repositories {
