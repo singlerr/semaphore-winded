@@ -1,0 +1,5 @@
+plugins{
+    id("base-conventions")
+}
+
+group = "io.github.singlerr.semaphore.controller"
