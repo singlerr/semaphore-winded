@@ -1,6 +1,7 @@
 plugins{
     id("base-conventions")
     `maven-publish`
+    signing
 }
 
 group = Globals.Controller.GROUP_ID
@@ -8,7 +9,7 @@ group = Globals.Controller.GROUP_ID
 publishing{
     publications{
         create<MavenPublication>("mavenJava"){
-            groupId = Globals.Controller.GROUP_ID
+            groupId = Globals.CallHandler.GROUP_ID
             artifactId = project.name
             setVersion(project.version)
             from(components["java"])
@@ -16,12 +17,16 @@ publishing{
     }
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/singlerr/semaphore-winded")
+            name = "sonatype"
+            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = System.getenv("USERNAME")
+                password = System.getenv("PASSWORD")
             }
         }
     }
+}
+
+signing{
+    sign(publishing.publications.findByName("mavenJava"))
 }
