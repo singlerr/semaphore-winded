@@ -1,4 +1,7 @@
 object Globals {
+
+    const val MAJOR_VERSION = "1.0"
+
     object CallHandler {
         const val GROUP_ID = "io.github.singlerr.semaphore.callhandler"
     }

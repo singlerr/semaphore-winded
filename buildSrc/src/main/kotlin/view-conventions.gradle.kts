@@ -19,8 +19,8 @@ publishing{
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/singlerr/semaphore-winded")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = System.getProperty("GITHUB_ACTOR")
+                password = System.getProperty("ACCESS_TOKEN")
             }
         }
     }
