@@ -20,7 +20,7 @@ publishing{
             url = uri("https://maven.pkg.github.com/singlerr/semaphore-winded")
             credentials {
                 username = System.getProperty("GITHUB_ACTOR")
-                password = System.getProperty("ACCESS_TOKEN")
+                password = System.getProperty("GITHUB_TOKEN")
             }
         }
     }

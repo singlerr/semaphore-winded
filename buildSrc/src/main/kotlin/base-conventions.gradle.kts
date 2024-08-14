@@ -11,16 +11,6 @@ plugins{
 
 version = "${Globals.MAJOR_VERSION}.${System.getenv()["BUILD_NUMBER"] ?: "999"}"
 
-val secretsFile = file("$rootDir/.gradle/secrets.properties")
-if(secretsFile.exists()){
-    val props = Properties()
-    props.load(secretsFile.inputStream())
-
-    for (prop in props) {
-        System.setProperty(prop.key.toString(), prop.value.toString())
-    }
-}
-
 repositories {
     gradlePluginPortal()
 }
