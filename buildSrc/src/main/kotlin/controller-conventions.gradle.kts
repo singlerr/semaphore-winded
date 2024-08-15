@@ -1,7 +1,6 @@
 plugins{
     id("base-conventions")
     `maven-publish`
-    signing
 }
 
 group = Globals.Controller.GROUP_ID
@@ -9,7 +8,7 @@ group = Globals.Controller.GROUP_ID
 publishing{
     publications{
         create<MavenPublication>("mavenJava"){
-            groupId = Globals.CallHandler.GROUP_ID
+            groupId = group.toString()
             artifactId = project.name
             setVersion(project.version)
             from(components["java"])
@@ -17,16 +16,8 @@ publishing{
     }
     repositories {
         maven {
-            name = "sonatype"
-            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            credentials {
-                username = System.getenv("USERNAME")
-                password = System.getenv("PASSWORD")
-            }
+            name = "localMaven"
+            url = File(project.findProperty("localMvnRepo").toString()).toURI()
         }
     }
-}
-
-signing{
-    sign(publishing.publications.findByName("mavenJava"))
 }

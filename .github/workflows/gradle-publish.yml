@@ -2,7 +2,7 @@ name: Build And Publish
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "publish" ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,3 +33,5 @@ jobs:
         BUILD_NUMBER: ${{ github.run_number }}
         USERNAME: ${{ secrets.OSSRH_USERNAME }}
         PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+        SIGNING_KEY_ID: ${{ secrets.SIGNING_KEY_ID }}
+        SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
