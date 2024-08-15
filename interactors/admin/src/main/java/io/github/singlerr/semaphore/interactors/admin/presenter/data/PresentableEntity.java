@@ -3,17 +3,18 @@ package io.github.singlerr.semaphore.interactors.admin.presenter.data;
 import io.github.singlerr.semaphore.interactors.access.call.CallState;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class PresentableEntity {
-    private final int id;
+    private final UUID id;
     private final CallState callState;
 
-    public PresentableEntity(int id, CallState callState) {
+    public PresentableEntity(UUID id, CallState callState) {
         this.id = id;
         this.callState = callState;
     }
 
-    public int id() {
+    public UUID id() {
         return id;
     }
 

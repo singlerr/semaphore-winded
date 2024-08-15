@@ -10,6 +10,8 @@ import io.github.singlerr.semaphore.interactors.admin.manager.data.ConnectionSta
 import io.github.singlerr.semaphore.interactors.admin.presenter.CallConnectionPresenter;
 import io.github.singlerr.semaphore.interactors.admin.presenter.data.ErrorEntity;
 
+import java.util.UUID;
+
 public abstract class BaseCallConnectionManager implements CallConnectionManager {
 
     protected final DatabaseGateway database;
@@ -23,7 +25,7 @@ public abstract class BaseCallConnectionManager implements CallConnectionManager
     }
 
     @Override
-    public CallConnectionEntity open(int callerId, int calleeId) {
+    public CallConnectionEntity open(UUID callerId, UUID calleeId) {
         if(database.getById(calleeId) == null || database.getById(calleeId) == null){
             presenter.presentError(new ErrorEntity("해당 엔티티를 찾을 수 없습니다."));
             return null;
@@ -39,12 +41,12 @@ public abstract class BaseCallConnectionManager implements CallConnectionManager
     }
 
     @Override
-    public void close(int connectionId) {
+    public void close(UUID connectionId) {
         this.callConnectionHandler.close(connectionId);
     }
 
     @Override
-    public CallConnectionEntity getById(int id) {
+    public CallConnectionEntity getById(UUID id) {
         CallConnection connection = this.callConnectionHandler.getById(id);
         if(connection == null){
             presenter.presentError(new ErrorEntity("해당 연결을 찾을 수 없습니다."));

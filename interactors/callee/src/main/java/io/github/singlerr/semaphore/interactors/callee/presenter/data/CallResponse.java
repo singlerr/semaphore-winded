@@ -1,21 +1,22 @@
 package io.github.singlerr.semaphore.interactors.callee.presenter.data;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class CallResponse {
-    private final int callerId;
-    private final int calleeId;
+    private final UUID callerId;
+    private final UUID calleeId;
 
-    public CallResponse(int callerId, int calleeId) {
+    public CallResponse(UUID callerId, UUID calleeId) {
         this.callerId = callerId;
         this.calleeId = calleeId;
     }
 
-    public int callerId() {
+    public UUID callerId() {
         return callerId;
     }
 
-    public int calleeId() {
+    public UUID calleeId() {
         return calleeId;
     }
 

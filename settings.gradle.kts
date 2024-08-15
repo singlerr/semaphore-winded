@@ -18,3 +18,7 @@ include("views:caller")
 include("datagateways")
 include("callhandler")
 include("controllers:admin")
+include("controllers:caller")
+findProject(":controllers:caller")?.name = "caller"
+include("controllers:callee")
+findProject(":controllers:callee")?.name = "callee"

@@ -5,6 +5,8 @@ import io.github.singlerr.semaphore.interactors.access.database.Entity;
 import io.github.singlerr.semaphore.interactors.admin.manager.EntityManager;
 import io.github.singlerr.semaphore.interactors.admin.manager.data.CallableEntity;
 
+import java.util.UUID;
+
 public abstract class BaseEntityManager implements EntityManager {
 
     protected final DatabaseGateway database;
@@ -21,7 +23,7 @@ public abstract class BaseEntityManager implements EntityManager {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(UUID id) {
         if(database.getById(id) == null)
             return;
         database.delete(id);

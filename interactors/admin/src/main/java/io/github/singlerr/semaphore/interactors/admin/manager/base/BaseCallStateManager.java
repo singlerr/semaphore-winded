@@ -5,6 +5,8 @@ import io.github.singlerr.semaphore.interactors.access.database.DatabaseGateway;
 import io.github.singlerr.semaphore.interactors.access.database.Entity;
 import io.github.singlerr.semaphore.interactors.admin.manager.CallStateManager;
 
+import java.util.UUID;
+
 public abstract class BaseCallStateManager implements CallStateManager {
 
     protected final DatabaseGateway database;
@@ -14,7 +16,7 @@ public abstract class BaseCallStateManager implements CallStateManager {
     }
 
     @Override
-    public void updateById(int entityId, CallState state) {
+    public void updateById(UUID entityId, CallState state) {
         if(database.getById(entityId) == null)
             return;
 
@@ -22,7 +24,7 @@ public abstract class BaseCallStateManager implements CallStateManager {
     }
 
     @Override
-    public CallState getById(int entityId) {
+    public CallState getById(UUID entityId) {
         if(database.getById(entityId) == null)
             return null;
 

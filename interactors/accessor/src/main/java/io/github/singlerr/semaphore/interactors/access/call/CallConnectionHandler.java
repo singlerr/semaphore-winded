@@ -1,11 +1,13 @@
 package io.github.singlerr.semaphore.interactors.access.call;
 
+import java.util.UUID;
+
 public interface CallConnectionHandler {
 
-    CallConnection open(int callerId, int calleeId);
+    CallConnection open(UUID callerId, UUID calleeId);
 
-    CallConnection close(int connectionId);
+    CallConnection close(UUID connectionId);
 
-    CallConnection getById(int connectionId);
+    CallConnection getById(UUID connectionId);
 
 }

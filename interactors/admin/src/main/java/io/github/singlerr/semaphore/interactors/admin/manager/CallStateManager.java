@@ -2,10 +2,12 @@ package io.github.singlerr.semaphore.interactors.admin.manager;
 
 import io.github.singlerr.semaphore.interactors.access.call.CallState;
 
+import java.util.UUID;
+
 public interface CallStateManager {
 
-    void updateById(int entityId, CallState state);
+    void updateById(UUID entityId, CallState state);
 
-    CallState getById(int entityId);
+    CallState getById(UUID entityId);
 
 }

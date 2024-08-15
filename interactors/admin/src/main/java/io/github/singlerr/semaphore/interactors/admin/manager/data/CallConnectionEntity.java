@@ -1,29 +1,30 @@
 package io.github.singlerr.semaphore.interactors.admin.manager.data;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class CallConnectionEntity {
-    private final int id;
-    private final int callerId;
-    private final int calleeId;
+    private final UUID id;
+    private final UUID callerId;
+    private final UUID calleeId;
     private final ConnectionState state;
 
-    public CallConnectionEntity(int id, int callerId, int calleeId, ConnectionState state) {
+    public CallConnectionEntity(UUID id, UUID callerId, UUID calleeId, ConnectionState state) {
         this.id = id;
         this.callerId = callerId;
         this.calleeId = calleeId;
         this.state = state;
     }
 
-    public int id() {
+    public UUID id() {
         return id;
     }
 
-    public int callerId() {
+    public UUID callerId() {
         return callerId;
     }
 
-    public int calleeId() {
+    public UUID calleeId() {
         return calleeId;
     }
 

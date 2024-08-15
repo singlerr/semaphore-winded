@@ -1,19 +1,20 @@
 package io.github.singlerr.semaphore.interactors.admin.controller.data;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class EntityQuery {
 
     private EntityQuery(){}
 
     public static final class GetEntity {
-        private final int id;
+        private final UUID id;
 
-        public GetEntity(int id) {
+        public GetEntity(UUID id) {
             this.id = id;
         }
 
-        public int id() {
+        public UUID id() {
             return id;
         }
 
@@ -58,13 +59,13 @@ public final class EntityQuery {
     }
 
     public static final class DeleteEntity {
-        private final int id;
+        private final UUID id;
 
-        public DeleteEntity(int id) {
+        public DeleteEntity(UUID id) {
             this.id = id;
         }
 
-        public int id() {
+        public UUID id() {
             return id;
         }
 

@@ -1,24 +1,25 @@
 package io.github.singlerr.semaphore.interactors.admin.controller.data;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class CallConnectionQuery {
     private CallConnectionQuery(){}
 
     public static final class OpenConnection {
-        private final int callerId;
-        private final int calleeId;
+        private final UUID callerId;
+        private final UUID calleeId;
 
-        public OpenConnection(int callerId, int calleeId) {
+        public OpenConnection(UUID callerId, UUID calleeId) {
             this.callerId = callerId;
             this.calleeId = calleeId;
         }
 
-        public int callerId() {
+        public UUID callerId() {
             return callerId;
         }
 
-        public int calleeId() {
+        public UUID calleeId() {
             return calleeId;
         }
 
@@ -45,13 +46,13 @@ public final class CallConnectionQuery {
     }
 
     public static final class CloseConnection {
-        private final int id;
+        private final UUID id;
 
-        public CloseConnection(int id) {
+        public CloseConnection(UUID id) {
             this.id = id;
         }
 
-        public int id() {
+        public UUID id() {
             return id;
         }
 
@@ -76,13 +77,13 @@ public final class CallConnectionQuery {
     }
 
     public static final class GetConnection {
-        private final int id;
+        private final UUID id;
 
-        public GetConnection(int id) {
+        public GetConnection(UUID id) {
             this.id = id;
         }
 
-        public int id() {
+        public UUID id() {
             return id;
         }
 

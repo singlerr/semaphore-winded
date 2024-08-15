@@ -1,29 +1,30 @@
 package io.github.singlerr.semaphore.interactors.admin.presenter.data;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class PresentableCallConnection {
-    private final int id;
-    private final int callerId;
-    private final int calleeId;
+    private final UUID id;
+    private final UUID callerId;
+    private final UUID calleeId;
     private final boolean alive;
 
-    public PresentableCallConnection(int id, int callerId, int calleeId, boolean alive) {
+    public PresentableCallConnection(UUID id, UUID callerId, UUID calleeId, boolean alive) {
         this.id = id;
         this.callerId = callerId;
         this.calleeId = calleeId;
         this.alive = alive;
     }
 
-    public int id() {
+    public UUID id() {
         return id;
     }
 
-    public int callerId() {
+    public UUID callerId() {
         return callerId;
     }
 
-    public int calleeId() {
+    public UUID calleeId() {
         return calleeId;
     }
 

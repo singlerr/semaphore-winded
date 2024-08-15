@@ -3,19 +3,20 @@ package io.github.singlerr.semaphore.interactors.admin.controller.data;
 import io.github.singlerr.semaphore.interactors.access.call.CallState;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class CallStateQuery {
 
     private CallStateQuery(){}
 
     public static final class GetCallState {
-        private final int id;
+        private final UUID id;
 
-        public GetCallState(int id) {
+        public GetCallState(UUID id) {
             this.id = id;
         }
 
-        public int id() {
+        public UUID id() {
             return id;
         }
 
@@ -40,15 +41,15 @@ public final class CallStateQuery {
     }
 
     public static final class SetCallState {
-        private final int id;
+        private final UUID id;
         private final CallState callState;
 
-        public SetCallState(int id, CallState callState) {
+        public SetCallState(UUID id, CallState callState) {
             this.id = id;
             this.callState = callState;
         }
 
-        public int id() {
+        public UUID id() {
             return id;
         }
 

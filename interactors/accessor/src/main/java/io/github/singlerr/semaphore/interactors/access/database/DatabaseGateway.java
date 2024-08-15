@@ -1,15 +1,17 @@
 package io.github.singlerr.semaphore.interactors.access.database;
 
+import java.util.UUID;
+
 public interface DatabaseGateway {
 
-    void update(int id, Entity state);
+    void update(UUID id, Entity state);
 
-    void create(int id, Entity newState);
+    void create(UUID id, Entity newState);
 
     Entity create();
 
-    void delete(int id);
+    void delete(UUID id);
 
-    Entity getById(int id);
+    Entity getById(UUID id);
 
 }

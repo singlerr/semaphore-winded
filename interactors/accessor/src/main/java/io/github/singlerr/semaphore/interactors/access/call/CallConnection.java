@@ -1,29 +1,30 @@
 package io.github.singlerr.semaphore.interactors.access.call;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class CallConnection {
-    private final int id;
-    private final int calleeId;
-    private final int callerId;
+    private final UUID id;
+    private final UUID calleeId;
+    private final UUID callerId;
     private final CallState state;
 
-    public CallConnection(int id, int calleeId, int callerId, CallState state) {
+    public CallConnection(UUID id, UUID calleeId, UUID callerId, CallState state) {
         this.id = id;
         this.calleeId = calleeId;
         this.callerId = callerId;
         this.state = state;
     }
 
-    public int id() {
+    public UUID id() {
         return id;
     }
 
-    public int calleeId() {
+    public UUID calleeId() {
         return calleeId;
     }
 
-    public int callerId() {
+    public UUID callerId() {
         return callerId;
     }
 

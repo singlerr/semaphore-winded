@@ -1,17 +1,18 @@
 package io.github.singlerr.semaphore.interactors.admin.manager.data;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class CallableEntity {
-    private final int id;
+    private final UUID id;
     private final int stateId;
 
-    public CallableEntity(int id, int stateId) {
+    public CallableEntity(UUID id, int stateId) {
         this.id = id;
         this.stateId = stateId;
     }
 
-    public int id() {
+    public UUID id() {
         return id;
     }
 
