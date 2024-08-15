@@ -1,4 +1,4 @@
-package io.github.singlerr.semaphore.interactors.callee.presenter.data;
+package io.github.singlerr.semaphore.interactors.caller.presenter.data;
 
 import java.util.Objects;
 import java.util.UUID;
