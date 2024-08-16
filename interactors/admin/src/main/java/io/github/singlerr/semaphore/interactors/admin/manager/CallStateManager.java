@@ -6,8 +6,8 @@ import java.util.UUID;
 
 public interface CallStateManager {
 
-    void updateById(UUID entityId, CallState state);
+    void updateById(UUID entityId, int state);
 
-    CallState getById(UUID entityId);
+    int getById(UUID entityId);
 
 }

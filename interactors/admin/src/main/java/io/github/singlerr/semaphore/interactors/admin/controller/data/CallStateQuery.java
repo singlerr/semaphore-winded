@@ -42,40 +42,40 @@ public final class CallStateQuery {
 
     public static final class SetCallState {
         private final UUID id;
-        private final CallState callState;
+        private final int state;
 
-        public SetCallState(UUID id, CallState callState) {
+        public SetCallState(UUID id, int state) {
             this.id = id;
-            this.callState = callState;
+            this.state = state;
         }
 
         public UUID id() {
             return id;
         }
 
-        public CallState callState() {
-            return callState;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj == this) return true;
-            if (obj == null || obj.getClass() != this.getClass()) return false;
-            SetCallState that = (SetCallState) obj;
-            return this.id == that.id &&
-                    Objects.equals(this.callState, that.callState);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(id, callState);
+        public int state() {
+            return state;
         }
 
         @Override
         public String toString() {
-            return "SetCallState[" +
-                    "id=" + id + ", " +
-                    "callState=" + callState + ']';
+            return "SetCallState{" +
+                    "id=" + id +
+                    ", state=" + state +
+                    '}';
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            SetCallState that = (SetCallState) o;
+            return state == that.state && Objects.equals(id, that.id);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(id, state);
         }
     }
 }

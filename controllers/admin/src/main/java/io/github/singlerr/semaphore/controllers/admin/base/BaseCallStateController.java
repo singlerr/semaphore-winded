@@ -21,9 +21,9 @@ public abstract class BaseCallStateController implements CallStateController {
 
     @Override
     public void getCallState(CallStateQuery.GetCallState query) {
-        CallState state = callStateManager.getById(query.id());
+        int state = callStateManager.getById(query.id());
 
-        if(state == null){
+        if(state == -1){
             entityPresenter.presentError(new ErrorEntity("해당 엔티티를 찾을 수 없습니다."));
             return;
         }
@@ -33,6 +33,6 @@ public abstract class BaseCallStateController implements CallStateController {
 
     @Override
     public void setCallState(CallStateQuery.SetCallState query) {
-        callStateManager.updateById(query.id(), query.callState());
+        callStateManager.updateById(query.id(), query.state());
     }
 }

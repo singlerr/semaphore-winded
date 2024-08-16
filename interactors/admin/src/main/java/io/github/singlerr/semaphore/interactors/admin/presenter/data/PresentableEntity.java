@@ -7,40 +7,39 @@ import java.util.UUID;
 
 public final class PresentableEntity {
     private final UUID id;
-    private final CallState callState;
+    private final int state;
 
-    public PresentableEntity(UUID id, CallState callState) {
+    public PresentableEntity(UUID id, int state) {
         this.id = id;
-        this.callState = callState;
+        this.state = state;
     }
 
     public UUID id() {
         return id;
     }
 
-    public CallState callState() {
-        return callState;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        PresentableEntity that = (PresentableEntity) obj;
-        return this.id == that.id &&
-                Objects.equals(this.callState, that.callState);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, callState);
+    public int state(){
+        return state;
     }
 
     @Override
     public String toString() {
-        return "PresentableEntity[" +
-                "id=" + id + ", " +
-                "callState=" + callState + ']';
+        return "PresentableEntity{" +
+                "id=" + id +
+                ", state=" + state +
+                '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PresentableEntity that = (PresentableEntity) o;
+        return state == that.state && Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, state);
+    }
 }

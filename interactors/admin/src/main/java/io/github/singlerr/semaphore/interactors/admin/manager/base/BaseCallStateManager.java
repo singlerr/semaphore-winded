@@ -16,23 +16,19 @@ public abstract class BaseCallStateManager implements CallStateManager {
     }
 
     @Override
-    public void updateById(UUID entityId, CallState state) {
+    public void updateById(UUID entityId, int state) {
         if(database.getById(entityId) == null)
             return;
 
-        database.update(entityId, new Entity(entityId, state.getId()));
+        database.update(entityId, new Entity(entityId, state));
     }
 
     @Override
-    public CallState getById(UUID entityId) {
+    public int getById(UUID entityId) {
         if(database.getById(entityId) == null)
-            return null;
+            return -1;
 
         Entity entity = database.getById(entityId);
-        for (CallState value : CallState.values()) {
-            if(value.getId() == entity.stateId())
-                return value;
-        }
-        return null;
+        return entity.stateId();
     }
 }

@@ -29,15 +29,7 @@ public abstract class BaseEntityController implements EntityController {
             return;
         }
 
-        CallState state = null;
-        for (CallState s : CallState.values()) {
-            if (s.getId() == entity.stateId()) {
-                state = s;
-                break;
-            }
-        }
-
-        entityPresenter.present(new PresentableEntity(entity.id(), state));
+        entityPresenter.present(new PresentableEntity(entity.id(), entity.stateId()));
     }
 
     @Override
