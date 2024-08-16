@@ -9,7 +9,7 @@ public final class CallStateQuery {
 
     private CallStateQuery(){}
 
-    public static class GetCallState {
+    public static class GetCallState extends ContextAware{
         private final UUID id;
 
         public GetCallState(UUID id) {
@@ -40,7 +40,7 @@ public final class CallStateQuery {
         }
     }
 
-    public static class SetCallState {
+    public static class SetCallState extends ContextAware{
         private final UUID id;
         private final int state;
 

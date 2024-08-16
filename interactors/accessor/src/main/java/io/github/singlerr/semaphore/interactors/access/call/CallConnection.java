@@ -1,9 +1,11 @@
 package io.github.singlerr.semaphore.interactors.access.call;
 
+import io.github.singlerr.semaphore.interactors.access.ContextAware;
+
 import java.util.Objects;
 import java.util.UUID;
 
-public class CallConnection {
+public final class CallConnection extends ContextAware {
     private final UUID id;
     private final UUID calleeId;
     private final UUID callerId;

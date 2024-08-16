@@ -6,7 +6,7 @@ import java.util.UUID;
 public final class CallConnectionQuery {
     private CallConnectionQuery(){}
 
-    public static class OpenConnection {
+    public static class OpenConnection extends ContextAware{
         private final UUID callerId;
         private final UUID calleeId;
 
@@ -45,7 +45,7 @@ public final class CallConnectionQuery {
         }
     }
 
-    public static class CloseConnection {
+    public static class CloseConnection extends ContextAware{
         private final UUID id;
 
         public CloseConnection(UUID id) {
@@ -76,7 +76,7 @@ public final class CallConnectionQuery {
         }
     }
 
-    public static class GetConnection {
+    public static class GetConnection extends ContextAware{
         private final UUID id;
 
         public GetConnection(UUID id) {

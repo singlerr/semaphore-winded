@@ -1,9 +1,11 @@
 package io.github.singlerr.semaphore.interactors.access.database;
 
+import io.github.singlerr.semaphore.interactors.access.ContextAware;
+
 import java.util.Objects;
 import java.util.UUID;
 
-public class Entity {
+public final class Entity extends ContextAware {
 
     private final UUID id;
     private final int stateId;

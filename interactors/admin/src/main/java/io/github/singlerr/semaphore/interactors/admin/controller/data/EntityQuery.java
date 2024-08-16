@@ -7,7 +7,7 @@ public final class EntityQuery {
 
     private EntityQuery(){}
 
-    public static class GetEntity {
+    public static class GetEntity extends ContextAware{
         private final UUID id;
 
         public GetEntity(UUID id) {
@@ -38,7 +38,7 @@ public final class EntityQuery {
         }
     }
 
-    public static class CreateEntity {
+    public static class CreateEntity extends ContextAware{
 
         private UUID id;
 
@@ -71,7 +71,7 @@ public final class EntityQuery {
         }
     }
 
-    public static class DeleteEntity {
+    public static class DeleteEntity extends ContextAware{
         private final UUID id;
 
         public DeleteEntity(UUID id) {

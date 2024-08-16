@@ -5,7 +5,7 @@ import io.github.singlerr.semaphore.interactors.access.call.CallState;
 import java.util.Objects;
 import java.util.UUID;
 
-public class PresentableEntity {
+public final class PresentableEntity extends ContextAware{
     private final UUID id;
     private final int state;
 

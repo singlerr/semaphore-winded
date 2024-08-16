@@ -2,7 +2,7 @@ package io.github.singlerr.semaphore.interactors.admin.presenter.data;
 
 import java.util.Objects;
 
-public class ErrorEntity {
+public final class ErrorEntity extends ContextAware{
     private final String message;
 
     public ErrorEntity(String message) {
