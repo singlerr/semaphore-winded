@@ -1,5 +1,6 @@
 package io.github.singlerr.semaphore.interactors.access.database;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface DatabaseGateway {
@@ -8,10 +9,12 @@ public interface DatabaseGateway {
 
     void create(UUID id, Entity newState);
 
-    Entity create();
+    Entity create(UUID id);
 
     void delete(UUID id);
 
     Entity getById(UUID id);
+
+    List<Entity> getAll();
 
 }

@@ -7,7 +7,7 @@ public final class EntityQuery {
 
     private EntityQuery(){}
 
-    public static final class GetEntity {
+    public static class GetEntity {
         private final UUID id;
 
         public GetEntity(UUID id) {
@@ -38,27 +38,40 @@ public final class EntityQuery {
         }
     }
 
-    public static final class CreateEntity {
-        public CreateEntity() {
+    public static class CreateEntity {
+
+        private UUID id;
+
+        public CreateEntity(UUID id) {
+            this.id = id;
+        }
+
+        public UUID id(){
+            return id;
         }
 
         @Override
-        public boolean equals(Object obj) {
-            return obj == this || obj != null && obj.getClass() == this.getClass();
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            CreateEntity that = (CreateEntity) o;
+            return Objects.equals(id, that.id);
         }
 
         @Override
         public int hashCode() {
-            return 1;
+            return Objects.hashCode(id);
         }
 
         @Override
         public String toString() {
-            return "CreateEntity[]";
+            return "CreateEntity{" +
+                    "id=" + id +
+                    '}';
         }
     }
 
-    public static final class DeleteEntity {
+    public static class DeleteEntity {
         private final UUID id;
 
         public DeleteEntity(UUID id) {

@@ -9,7 +9,7 @@ public final class CallStateQuery {
 
     private CallStateQuery(){}
 
-    public static final class GetCallState {
+    public static class GetCallState {
         private final UUID id;
 
         public GetCallState(UUID id) {
@@ -40,7 +40,7 @@ public final class CallStateQuery {
         }
     }
 
-    public static final class SetCallState {
+    public static class SetCallState {
         private final UUID id;
         private final int state;
 

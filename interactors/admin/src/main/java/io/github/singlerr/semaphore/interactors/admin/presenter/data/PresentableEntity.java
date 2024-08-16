@@ -5,7 +5,7 @@ import io.github.singlerr.semaphore.interactors.access.call.CallState;
 import java.util.Objects;
 import java.util.UUID;
 
-public final class PresentableEntity {
+public class PresentableEntity {
     private final UUID id;
     private final int state;
 

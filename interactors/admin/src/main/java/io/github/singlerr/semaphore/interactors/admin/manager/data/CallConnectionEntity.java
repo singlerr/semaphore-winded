@@ -3,7 +3,7 @@ package io.github.singlerr.semaphore.interactors.admin.manager.data;
 import java.util.Objects;
 import java.util.UUID;
 
-public final class CallConnectionEntity {
+public class CallConnectionEntity {
     private final UUID id;
     private final UUID callerId;
     private final UUID calleeId;

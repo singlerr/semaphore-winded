@@ -3,7 +3,7 @@ package io.github.singlerr.semaphore.interactors.access.database;
 import java.util.Objects;
 import java.util.UUID;
 
-public final class Entity {
+public class Entity {
 
     private final UUID id;
     private final int stateId;

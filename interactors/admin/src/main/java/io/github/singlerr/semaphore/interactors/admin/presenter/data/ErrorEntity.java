@@ -2,7 +2,7 @@ package io.github.singlerr.semaphore.interactors.admin.presenter.data;
 
 import java.util.Objects;
 
-public final class ErrorEntity {
+public class ErrorEntity {
     private final String message;
 
     public ErrorEntity(String message) {

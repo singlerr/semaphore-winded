@@ -3,7 +3,7 @@ package io.github.singlerr.semaphore.interactors.caller.presenter.data;
 import java.util.Objects;
 import java.util.UUID;
 
-public final class Error {
+public class Error {
     private final UUID calleeId;
     private final UUID callerId;
     private final String reason;

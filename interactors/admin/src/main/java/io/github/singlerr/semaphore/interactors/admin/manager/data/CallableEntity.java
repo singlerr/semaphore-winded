@@ -3,7 +3,7 @@ package io.github.singlerr.semaphore.interactors.admin.manager.data;
 import java.util.Objects;
 import java.util.UUID;
 
-public final class CallableEntity {
+public class CallableEntity {
     private final UUID id;
     private final int stateId;
 

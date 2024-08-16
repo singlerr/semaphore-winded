@@ -22,7 +22,7 @@ public abstract class BaseEntityController implements EntityController {
 
     @Override
     public void createEntity(EntityQuery.CreateEntity query) {
-        CallableEntity entity = entityManager.create();
+        CallableEntity entity = entityManager.create(query.id());
 
         if(entity == null){
             entityPresenter.presentError(new ErrorEntity("엔티티를 생설할 수 없습니다."));
@@ -36,4 +36,5 @@ public abstract class BaseEntityController implements EntityController {
     public void deleteEntity(EntityQuery.DeleteEntity query) {
         entityManager.delete(query.id());
     }
+
 }

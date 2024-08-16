@@ -6,7 +6,7 @@ import java.util.UUID;
 public final class CallConnectionQuery {
     private CallConnectionQuery(){}
 
-    public static final class OpenConnection {
+    public static class OpenConnection {
         private final UUID callerId;
         private final UUID calleeId;
 
@@ -45,7 +45,7 @@ public final class CallConnectionQuery {
         }
     }
 
-    public static final class CloseConnection {
+    public static class CloseConnection {
         private final UUID id;
 
         public CloseConnection(UUID id) {
@@ -76,7 +76,7 @@ public final class CallConnectionQuery {
         }
     }
 
-    public static final class GetConnection {
+    public static class GetConnection {
         private final UUID id;
 
         public GetConnection(UUID id) {
