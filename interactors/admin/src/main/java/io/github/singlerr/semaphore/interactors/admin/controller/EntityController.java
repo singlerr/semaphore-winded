@@ -10,6 +10,6 @@ public interface EntityController {
 
     void deleteEntity(EntityQuery.DeleteEntity query);
 
-    void getAllEntities();
+    void getAllEntities(EntityQuery.GetAllEntities query);
 
 }
