@@ -1,6 +1,7 @@
 package io.github.singlerr.semaphore.controllers.admin.base;
 
 import io.github.singlerr.semaphore.interactors.access.call.CallState;
+import io.github.singlerr.semaphore.interactors.access.database.Entity;
 import io.github.singlerr.semaphore.interactors.admin.AdminInteractor;
 import io.github.singlerr.semaphore.interactors.admin.controller.CallStateController;
 import io.github.singlerr.semaphore.interactors.admin.controller.data.CallStateQuery;
@@ -21,18 +22,18 @@ public abstract class BaseCallStateController implements CallStateController {
 
     @Override
     public void getCallState(CallStateQuery.GetCallState query) {
-        int state = callStateManager.getById(query.id());
+        Entity.State state = callStateManager.getById(query.id());
 
-        if(state == -1){
+        if(state == null){
             entityPresenter.presentError(new ErrorEntity("해당 엔티티를 찾을 수 없습니다."));
             return;
         }
 
-        entityPresenter.present(new PresentableEntity(query.id(), state));
+        entityPresenter.present(new PresentableEntity(query.id(), new PresentableEntity.State(state.stateId(), state.missCallCount())));
     }
 
     @Override
     public void setCallState(CallStateQuery.SetCallState query) {
-        callStateManager.updateById(query.id(), query.state());
+        callStateManager.updateById(query.id(), new Entity.State(query.state().stateId(), query.state().missCallCount()));
     }
 }

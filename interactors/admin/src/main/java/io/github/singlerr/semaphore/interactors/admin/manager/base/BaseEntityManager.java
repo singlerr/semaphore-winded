@@ -19,7 +19,7 @@ public abstract class BaseEntityManager implements EntityManager {
     public CallableEntity create(UUID id) {
         Entity entity = database.create(id);
 
-        return new CallableEntity(entity.id(), entity.stateId());
+        return new CallableEntity(entity.id(), new CallableEntity.State(entity.state().stateId(), entity.state().missCallCount()));
     }
 
     @Override

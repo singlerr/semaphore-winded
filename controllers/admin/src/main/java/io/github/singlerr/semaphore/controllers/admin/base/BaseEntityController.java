@@ -29,7 +29,7 @@ public abstract class BaseEntityController implements EntityController {
             return;
         }
 
-        entityPresenter.present(new PresentableEntity(entity.id(), entity.stateId()));
+        entityPresenter.present(new PresentableEntity(entity.id(), new PresentableEntity.State(entity.state().stateId(), entity.state().missCallCount())));
     }
 
     @Override
