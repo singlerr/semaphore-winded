@@ -2,6 +2,7 @@ package io.github.singlerr.semaphore.interactors.admin.presenter.data;
 
 import io.github.singlerr.semaphore.interactors.access.call.CallState;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -46,9 +47,9 @@ public final class PresentableEntity extends ContextAware{
     public static final class State {
 
         private final int stateId;
-        private final int missCallCount;
+        private final Map<UUID, Integer> missCallCount;
 
-        public State(int stateId, int missCallCount){
+        public State(int stateId, Map<UUID, Integer> missCallCount){
             this.stateId = stateId;
             this.missCallCount = missCallCount;
         }
@@ -57,7 +58,7 @@ public final class PresentableEntity extends ContextAware{
             return this.stateId;
         }
 
-        public int missCallCount(){
+        public Map<UUID, Integer> missCallCount(){
             return this.missCallCount;
         }
 

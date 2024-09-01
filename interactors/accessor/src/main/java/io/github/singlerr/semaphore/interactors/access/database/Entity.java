@@ -2,6 +2,7 @@ package io.github.singlerr.semaphore.interactors.access.database;
 
 import io.github.singlerr.semaphore.interactors.access.ContextAware;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -26,9 +27,9 @@ public final class Entity extends ContextAware {
     public static final class State {
 
         private final int stateId;
-        private final int missCallCount;
+        private final Map<UUID, Integer> missCallCount;
 
-        public State(int stateId, int missCallCount){
+        public State(int stateId, Map<UUID, Integer> missCallCount){
             this.stateId = stateId;
             this.missCallCount = missCallCount;
         }
@@ -37,7 +38,7 @@ public final class Entity extends ContextAware {
             return this.stateId;
         }
 
-        public int missCallCount(){
+        public Map<UUID, Integer> missCallCount(){
             return this.missCallCount;
         }
 
@@ -54,7 +55,7 @@ public final class Entity extends ContextAware {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             State state = (State) o;
-            return stateId == state.stateId && missCallCount == state.missCallCount;
+            return stateId == state.stateId && Objects.equals(missCallCount, state.missCallCount);
         }
 
         @Override

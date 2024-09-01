@@ -70,3 +70,4 @@ bin/
 /mvn-repo/io/github/singlerr/semaphore/callhandler/callhandler/maven-metadata.xml.sha1
 /mvn-repo/io/github/singlerr/semaphore/callhandler/callhandler/maven-metadata.xml.sha256
 /mvn-repo/io/github/singlerr/semaphore/callhandler/callhandler/maven-metadata.xml.sha512
+/.idea/
