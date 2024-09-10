@@ -21,7 +21,7 @@ publishing{
     repositories {
         maven {
             name = "localMaven"
-            url = File(project.findProperty("localMvnRepo").toString()).toURI()
+            url = uri(project.findProperty("localMvnRepo")!!.toString())
         }
     }
 }

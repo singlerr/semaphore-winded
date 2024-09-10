@@ -1,9 +1,11 @@
 package io.github.singlerr.semaphore.interactors.callee.presenter.data;
 
+import io.github.singlerr.semaphore.interactors.access.ContextAware;
+
 import java.util.Objects;
 import java.util.UUID;
 
-public final class Error {
+public final class Error extends ContextAware {
     private final UUID calleeId;
     private final UUID callerId;
     private final String reason;
