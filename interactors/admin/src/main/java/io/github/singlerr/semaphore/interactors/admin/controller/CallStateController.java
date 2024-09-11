@@ -4,8 +4,8 @@ import io.github.singlerr.semaphore.interactors.admin.controller.data.CallStateQ
 
 public interface CallStateController {
 
-    void getCallState(CallStateQuery.GetCallState query);
-
-    void setCallState(CallStateQuery.SetCallState query);
+    void openCall(CallStateQuery.OpenCall query);
+    void closeCall(CallStateQuery.CloseCall query);
+    void closeCall(CallStateQuery.CloseCallById query);
 
 }

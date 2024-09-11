@@ -11,59 +11,62 @@ public final class CallStateQuery {
 
     private CallStateQuery(){}
 
-    public static class GetCallState extends ContextAware{
-        private final UUID id;
+    public static class OpenCall extends ContextAware{
 
-        public GetCallState(UUID id) {
-            this.id = id;
+        private final UUID callerId;
+        private final UUID calleeId;
+
+        public OpenCall(UUID callerId, UUID calleeId) {
+            this.callerId = callerId;
+            this.calleeId = calleeId;
         }
 
-        public UUID id() {
-            return id;
+        public UUID callerId(){
+            return callerId;
+        }
+
+        public UUID calleeId(){
+            return calleeId;
         }
 
         @Override
-        public boolean equals(Object obj) {
-            if (obj == this) return true;
-            if (obj == null || obj.getClass() != this.getClass()) return false;
-            GetCallState that = (GetCallState) obj;
-            return this.id == that.id;
+        public String toString() {
+            return "OpenCall{" +
+                    "callerId=" + callerId +
+                    ", calleeId=" + calleeId +
+                    '}';
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            OpenCall openCall = (OpenCall) o;
+            return Objects.equals(callerId, openCall.callerId) && Objects.equals(calleeId, openCall.calleeId);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(id);
-        }
-
-        @Override
-        public String toString() {
-            return "GetCallState[" +
-                    "id=" + id + ']';
+            return Objects.hash(callerId, calleeId);
         }
     }
 
-    public static class SetCallState extends ContextAware{
-        private final UUID id;
-        private final State state;
+    public static class CloseCallById extends ContextAware{
 
-        public SetCallState(UUID id, State state) {
+        private final UUID id;
+
+        public CloseCallById(UUID id) {
             this.id = id;
-            this.state = state;
         }
 
         public UUID id() {
             return id;
         }
 
-        public State state() {
-            return state;
-        }
-
         @Override
         public String toString() {
-            return "SetCallState{" +
+            return "CloseCallById{" +
                     "id=" + id +
-                    ", state=" + state +
                     '}';
         }
 
@@ -71,39 +74,39 @@ public final class CallStateQuery {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            SetCallState that = (SetCallState) o;
-            return state == that.state && Objects.equals(id, that.id);
+            CloseCallById that = (CloseCallById) o;
+            return Objects.equals(id, that.id);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(id, state);
+            return Objects.hashCode(id);
         }
     }
 
-    public static final class State {
+    public static class CloseCall extends ContextAware{
 
-        private final int stateId;
-        private final Map<UUID, Integer> missCallCount;
+        private final UUID callerId;
+        private final UUID calleeId;
 
-        public State(int stateId, Map<UUID, Integer> missCallCount){
-            this.stateId = stateId;
-            this.missCallCount = missCallCount;
+        public CloseCall(UUID callerId, UUID calleeId){
+            this.callerId = callerId;
+            this.calleeId = calleeId;
         }
 
-        public int stateId(){
-            return this.stateId;
+        public UUID callerId(){
+            return callerId;
         }
 
-        public Map<UUID, Integer> missCallCount(){
-            return this.missCallCount;
+        public UUID calleeId(){
+            return calleeId;
         }
 
         @Override
         public String toString() {
-            return "State{" +
-                    "stateId=" + stateId +
-                    ", missCallCount=" + missCallCount +
+            return "CloseCall{" +
+                    "callerId=" + callerId +
+                    ", calleeId=" + calleeId +
                     '}';
         }
 
@@ -111,13 +114,13 @@ public final class CallStateQuery {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            State state = (State) o;
-            return stateId == state.stateId && missCallCount == state.missCallCount;
+            CloseCall closeCall = (CloseCall) o;
+            return Objects.equals(callerId, closeCall.callerId) && Objects.equals(calleeId, closeCall.calleeId);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(stateId, missCallCount);
+            return Objects.hash(callerId, calleeId);
         }
     }
 }
