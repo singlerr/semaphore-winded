@@ -1,8 +1,7 @@
 package io.github.singlerr.semaphore.interactors.caller.controller.data;
 
-import lombok.Data;
-
 import java.util.UUID;
+import lombok.Data;
 
 @Data
 public class CallRequest {

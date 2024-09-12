@@ -1,9 +1,8 @@
 package io.github.singlerr.semaphore.interactors.admin.controller.data;
 
+import java.util.UUID;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.util.UUID;
 
 public final class CallStateQuery {
 

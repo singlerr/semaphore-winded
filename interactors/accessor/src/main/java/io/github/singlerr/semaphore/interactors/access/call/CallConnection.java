@@ -1,10 +1,9 @@
 package io.github.singlerr.semaphore.interactors.access.call;
 
 import io.github.singlerr.semaphore.interactors.access.ContextAware;
+import java.util.UUID;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.util.UUID;
 
 @EqualsAndHashCode(callSuper = false)
 @Data

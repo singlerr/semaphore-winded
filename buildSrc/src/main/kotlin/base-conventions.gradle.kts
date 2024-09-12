@@ -1,4 +1,3 @@
-import org.gradle.kotlin.dsl.checkstyle
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.repositories
 

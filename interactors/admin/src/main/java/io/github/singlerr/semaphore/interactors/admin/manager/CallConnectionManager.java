@@ -1,7 +1,6 @@
 package io.github.singlerr.semaphore.interactors.admin.manager;
 
 import io.github.singlerr.semaphore.interactors.admin.manager.data.CallConnectionEntity;
-
 import java.util.UUID;
 
 public interface CallConnectionManager {

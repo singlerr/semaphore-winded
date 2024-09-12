@@ -3,7 +3,6 @@ package io.github.singlerr.semaphore.presenter.admin;
 import io.github.singlerr.semaphore.interactors.admin.presenter.EntityPresenter;
 import io.github.singlerr.semaphore.interactors.admin.presenter.data.ErrorEntity;
 import io.github.singlerr.semaphore.interactors.admin.presenter.data.PresentableEntity;
-
 import java.util.ArrayList;
 import java.util.Collection;
 

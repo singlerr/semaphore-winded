@@ -9,7 +9,6 @@ import io.github.singlerr.semaphore.interactors.admin.manager.data.CallConnectio
 import io.github.singlerr.semaphore.interactors.admin.manager.data.ConnectionState;
 import io.github.singlerr.semaphore.interactors.admin.presenter.CallConnectionPresenter;
 import io.github.singlerr.semaphore.interactors.admin.presenter.data.ErrorEntity;
-
 import java.util.UUID;
 
 public abstract class BaseCallConnectionManager implements CallConnectionManager {

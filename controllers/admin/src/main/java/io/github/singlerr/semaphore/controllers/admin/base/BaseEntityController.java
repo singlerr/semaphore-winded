@@ -5,7 +5,6 @@ import io.github.singlerr.semaphore.interactors.admin.controller.EntityControlle
 import io.github.singlerr.semaphore.interactors.admin.controller.data.EntityQuery;
 import io.github.singlerr.semaphore.interactors.admin.manager.EntityManager;
 import io.github.singlerr.semaphore.interactors.admin.manager.data.CallableEntity;
-import io.github.singlerr.semaphore.interactors.admin.manager.data.EntityType;
 import io.github.singlerr.semaphore.interactors.admin.presenter.EntityPresenter;
 import io.github.singlerr.semaphore.interactors.admin.presenter.data.ErrorEntity;
 import io.github.singlerr.semaphore.interactors.admin.presenter.data.PresentableEntity;

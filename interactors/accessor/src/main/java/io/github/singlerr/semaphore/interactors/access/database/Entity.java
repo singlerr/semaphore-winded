@@ -1,11 +1,10 @@
 package io.github.singlerr.semaphore.interactors.access.database;
 
 import io.github.singlerr.semaphore.interactors.access.ContextAware;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 import java.util.Map;
 import java.util.UUID;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 
 @EqualsAndHashCode(callSuper = false)

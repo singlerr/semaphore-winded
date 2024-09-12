@@ -1,7 +1,6 @@
 package io.github.singlerr.semaphore.interactors.callee.presenter.data;
 
 import io.github.singlerr.semaphore.interactors.access.ContextAware;
-
 import java.util.Objects;
 import java.util.UUID;
 

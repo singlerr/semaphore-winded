@@ -1,8 +1,7 @@
 package io.github.singlerr.semaphore.interactors.caller.presenter.data;
 
-import lombok.Data;
-
 import java.util.UUID;
+import lombok.Data;
 
 @Data
 public class InverseCallRequest {

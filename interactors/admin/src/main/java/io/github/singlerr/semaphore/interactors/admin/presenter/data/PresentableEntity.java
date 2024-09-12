@@ -1,9 +1,7 @@
 package io.github.singlerr.semaphore.interactors.admin.presenter.data;
 
-import io.github.singlerr.semaphore.interactors.access.database.Entity;
 import io.github.singlerr.semaphore.interactors.access.database.EntityType;
 import java.util.Map;
-import java.util.Objects;
 import java.util.UUID;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

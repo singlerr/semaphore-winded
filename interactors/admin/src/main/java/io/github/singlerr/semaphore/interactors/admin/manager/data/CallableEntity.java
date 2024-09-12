@@ -1,10 +1,9 @@
 package io.github.singlerr.semaphore.interactors.admin.manager.data;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 import java.util.Map;
 import java.util.UUID;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = false)
 @Data

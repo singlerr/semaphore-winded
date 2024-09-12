@@ -4,7 +4,6 @@ import io.github.singlerr.semaphore.interactors.access.database.DatabaseGateway;
 import io.github.singlerr.semaphore.interactors.access.database.Entity;
 import io.github.singlerr.semaphore.interactors.admin.manager.EntityManager;
 import io.github.singlerr.semaphore.interactors.admin.manager.data.CallableEntity;
-
 import io.github.singlerr.semaphore.interactors.admin.manager.data.EntityType;
 import java.util.UUID;
 
