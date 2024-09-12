@@ -5,10 +5,10 @@ import io.github.singlerr.semaphore.interactors.access.database.DatabaseGateway;
 
 public abstract class BaseCallConnectionHandler implements CallConnectionHandler {
 
-    protected final DatabaseGateway database;
+  protected final DatabaseGateway database;
 
-    protected BaseCallConnectionHandler(DatabaseGateway database){
-        this.database = database;
-    }
+  protected BaseCallConnectionHandler(DatabaseGateway database) {
+    this.database = database;
+  }
 
 }

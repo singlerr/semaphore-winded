@@ -4,6 +4,6 @@ import io.github.singlerr.semaphore.interactors.caller.presenter.data.InverseCal
 
 public interface CallRequestPresenter {
 
-    void present(InverseCallRequest request);
+  void present(InverseCallRequest request);
 
 }

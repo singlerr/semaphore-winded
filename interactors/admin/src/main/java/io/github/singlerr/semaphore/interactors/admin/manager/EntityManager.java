@@ -7,11 +7,11 @@ import java.util.UUID;
 
 public interface EntityManager {
 
-    CallableEntity create(UUID id);
+  CallableEntity create(UUID id);
 
-    void delete(UUID id);
+  void delete(UUID id);
 
-    List<CallableEntity> getAll();
+  List<CallableEntity> getAll();
 
 }
 

@@ -5,16 +5,16 @@ import java.util.UUID;
 
 public interface DatabaseGateway {
 
-    void update(UUID id, Entity state);
+  void update(UUID id, Entity state);
 
-    void create(UUID id, Entity newState);
+  void create(UUID id, Entity newState);
 
-    Entity create(UUID id);
+  Entity create(UUID id);
 
-    void delete(UUID id);
+  void delete(UUID id);
 
-    Entity getById(UUID id);
+  Entity getById(UUID id);
 
-    List<Entity> getAll();
+  List<Entity> getAll();
 
 }

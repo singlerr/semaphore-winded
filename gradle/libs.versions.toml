@@ -2,4 +2,4 @@
 spotless = "7.0.0.BETA1"
 
 [plugins]
-spotless = { id = "com.diffplug.spotless", version.ref = "spotless"}
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

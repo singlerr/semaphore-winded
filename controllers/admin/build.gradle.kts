@@ -2,7 +2,7 @@ plugins {
     id("controller-conventions")
 }
 
-dependencies{
+dependencies {
     implementation(project(":interactors:accessor"))
     implementation(project(":interactors:admin"))
 }

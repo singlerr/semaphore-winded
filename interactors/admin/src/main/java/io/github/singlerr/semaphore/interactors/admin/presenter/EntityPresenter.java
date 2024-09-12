@@ -4,10 +4,10 @@ import io.github.singlerr.semaphore.interactors.admin.presenter.data.Presentable
 
 import java.util.List;
 
-public interface EntityPresenter extends ErrorPresenter{
+public interface EntityPresenter extends ErrorPresenter {
 
-    void present(PresentableEntity entity);
+  void present(PresentableEntity entity);
 
-    void present(List<PresentableEntity> entities);
+  void present(List<PresentableEntity> entities);
 
 }

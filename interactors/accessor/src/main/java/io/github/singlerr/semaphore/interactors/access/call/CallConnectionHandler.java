@@ -4,10 +4,10 @@ import java.util.UUID;
 
 public interface CallConnectionHandler {
 
-    CallConnection open(UUID callerId, UUID calleeId);
+  CallConnection open(UUID callerId, UUID calleeId);
 
-    CallConnection close(UUID connectionId);
+  CallConnection close(UUID connectionId);
 
-    CallConnection getById(UUID connectionId);
+  CallConnection getById(UUID connectionId);
 
 }

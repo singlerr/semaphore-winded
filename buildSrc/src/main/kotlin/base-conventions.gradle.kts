@@ -1,10 +1,8 @@
 import org.gradle.kotlin.dsl.checkstyle
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.repositories
 
-plugins{
-    checkstyle
+plugins {
     id("java")
 }
 
@@ -24,14 +22,18 @@ java {
 
 repositories {
     gradlePluginPortal()
+    mavenCentral()
 }
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+
+    compileOnly("org.projectlombok:lombok:1.18.34")
+    annotationProcessor("org.projectlombok:lombok:1.18.34")
 }
 
-tasks.javadoc{
+tasks.javadoc {
     isFailOnError = false
     options.encoding = "UTF-8"
 }
@@ -39,6 +41,7 @@ tasks.javadoc{
 tasks.test {
     useJUnitPlatform()
 }
+
 
 tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"

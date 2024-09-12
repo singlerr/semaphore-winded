@@ -6,6 +6,6 @@ import java.util.UUID;
 
 public interface CallResponseManager {
 
-    void reply(UUID callerId, UUID calleeId, ResponseType type);
+  void reply(UUID callerId, UUID calleeId, ResponseType type);
 
 }

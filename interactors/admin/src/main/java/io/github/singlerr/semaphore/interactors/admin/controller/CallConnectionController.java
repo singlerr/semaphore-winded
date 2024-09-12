@@ -4,10 +4,10 @@ import io.github.singlerr.semaphore.interactors.admin.controller.data.CallConnec
 
 public interface CallConnectionController {
 
-    void openConnection(CallConnectionQuery.OpenConnection query);
+  void openConnection(CallConnectionQuery.OpenConnection query);
 
-    void closeConnection(CallConnectionQuery.CloseConnection query);
+  void closeConnection(CallConnectionQuery.CloseConnection query);
 
-    void getConnection(CallConnectionQuery.GetConnection query);
+  void getConnection(CallConnectionQuery.GetConnection query);
 
 }

@@ -1,4 +1,4 @@
-plugins{
+plugins {
     id("base-conventions")
     `maven-publish`
     signing
@@ -6,9 +6,9 @@ plugins{
 
 group = Globals.CallHandler.GROUP_ID
 
-publishing{
-    publications{
-        create<MavenPublication>("mavenJava"){
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
             groupId = group.toString()
             artifactId = project.name
             setVersion(project.version)

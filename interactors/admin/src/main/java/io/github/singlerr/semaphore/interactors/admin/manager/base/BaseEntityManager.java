@@ -5,27 +5,31 @@ import io.github.singlerr.semaphore.interactors.access.database.Entity;
 import io.github.singlerr.semaphore.interactors.admin.manager.EntityManager;
 import io.github.singlerr.semaphore.interactors.admin.manager.data.CallableEntity;
 
+import io.github.singlerr.semaphore.interactors.admin.manager.data.EntityType;
 import java.util.UUID;
 
 public abstract class BaseEntityManager implements EntityManager {
 
-    protected final DatabaseGateway database;
+  protected final DatabaseGateway database;
 
-    protected BaseEntityManager(DatabaseGateway database){
-        this.database = database;
+  protected BaseEntityManager(DatabaseGateway database) {
+    this.database = database;
+  }
+
+  @Override
+  public CallableEntity create(UUID id) {
+    Entity entity = database.create(id);
+
+    return new CallableEntity(entity.getId(),
+        new CallableEntity.State(entity.getState().getStateId(),
+            entity.getState().getMissCallCount(), EntityType.PLAYER));
+  }
+
+  @Override
+  public void delete(UUID id) {
+    if (database.getById(id) == null) {
+      return;
     }
-
-    @Override
-    public CallableEntity create(UUID id) {
-        Entity entity = database.create(id);
-
-        return new CallableEntity(entity.id(), new CallableEntity.State(entity.state().stateId(), entity.state().missCallCount()));
-    }
-
-    @Override
-    public void delete(UUID id) {
-        if(database.getById(id) == null)
-            return;
-        database.delete(id);
-    }
+    database.delete(id);
+  }
 }

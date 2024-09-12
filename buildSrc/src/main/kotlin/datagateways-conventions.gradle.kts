@@ -1,7 +1,4 @@
-import gradle.kotlin.dsl.accessors._75dcd27d785490f46d3d6fcf15a326ca.publishing
-import gradle.kotlin.dsl.accessors._75dcd27d785490f46d3d6fcf15a326ca.signing
-
-plugins{
+plugins {
     id("base-conventions")
     `maven-publish`
     signing
@@ -9,9 +6,9 @@ plugins{
 
 group = Globals.DataGateways.GROUP_ID
 
-publishing{
-    publications{
-        create<MavenPublication>("mavenJava"){
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
             groupId = group.toString()
             artifactId = project.name
             setVersion(project.version)

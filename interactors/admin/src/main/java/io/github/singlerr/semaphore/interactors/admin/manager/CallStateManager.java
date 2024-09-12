@@ -1,17 +1,15 @@
 package io.github.singlerr.semaphore.interactors.admin.manager;
 
-import io.github.singlerr.semaphore.interactors.access.call.CallState;
-import io.github.singlerr.semaphore.interactors.access.database.Entity;
 import io.github.singlerr.semaphore.interactors.admin.manager.data.Call;
 
 import java.util.UUID;
 
 public interface CallStateManager {
 
-    Call openCall(UUID callerId, UUID calleeId);
+  Call openCall(UUID callerId, UUID calleeId);
 
-    Call closeCall(UUID id);
+  Call closeCall(UUID id);
 
-    Call closeCall(UUID callerId, UUID calleeId);
+  Call closeCall(UUID callerId, UUID calleeId);
 
 }

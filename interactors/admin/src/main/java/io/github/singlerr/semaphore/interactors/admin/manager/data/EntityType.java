@@ -1,6 +1,7 @@
 package io.github.singlerr.semaphore.interactors.admin.manager.data;
 
-public enum ConnectionState {
-  ALIVE,
-  DEAD
+public enum EntityType {
+  PLAYER,
+  PHONE_BOX,
+  ADMIN
 }

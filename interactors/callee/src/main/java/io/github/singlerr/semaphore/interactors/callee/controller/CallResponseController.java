@@ -4,6 +4,6 @@ import io.github.singlerr.semaphore.interactors.callee.controller.data.CallRespo
 
 public interface CallResponseController {
 
-    void reply(CallResponse response);
+  void reply(CallResponse response);
 
 }

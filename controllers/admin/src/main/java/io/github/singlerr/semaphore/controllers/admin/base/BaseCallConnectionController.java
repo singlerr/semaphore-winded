@@ -11,27 +11,28 @@ import io.github.singlerr.semaphore.interactors.admin.presenter.data.Presentable
 
 public abstract class BaseCallConnectionController implements CallConnectionController {
 
-    protected final CallConnectionManager manager;
-    protected final CallConnectionPresenter presenter;
+  protected final CallConnectionManager manager;
+  protected final CallConnectionPresenter presenter;
 
-    protected BaseCallConnectionController(AdminInteractor manager){
-        this.manager = manager.getConnectionManager();
-        this.presenter = manager.getConnectionPresenter();
-    }
+  protected BaseCallConnectionController(AdminInteractor manager) {
+    this.manager = manager.getConnectionManager();
+    this.presenter = manager.getConnectionPresenter();
+  }
 
-    @Override
-    public void openConnection(CallConnectionQuery.OpenConnection query) {
-        manager.open(query.callerId(), query.calleeId());
-    }
+  @Override
+  public void openConnection(CallConnectionQuery.OpenConnection query) {
+    manager.open(query.getCallerId(), query.getCalleeId());
+  }
 
-    @Override
-    public void closeConnection(CallConnectionQuery.CloseConnection query) {
-        manager.close(query.id());
-    }
+  @Override
+  public void closeConnection(CallConnectionQuery.CloseConnection query) {
+    manager.close(query.getId());
+  }
 
-    @Override
-    public void getConnection(CallConnectionQuery.GetConnection query) {
-        CallConnectionEntity connection = manager.getById(query.id());
-        presenter.present(new PresentableCallConnection(connection.id(), connection.callerId(), connection.callerId(), connection.state() == ConnectionState.ALIVE));
-    }
+  @Override
+  public void getConnection(CallConnectionQuery.GetConnection query) {
+    CallConnectionEntity connection = manager.getById(query.getId());
+    presenter.present(new PresentableCallConnection(connection.getId(), connection.getCallerId(),
+        connection.getCalleeId(), connection.getState() == ConnectionState.ALIVE));
+  }
 }

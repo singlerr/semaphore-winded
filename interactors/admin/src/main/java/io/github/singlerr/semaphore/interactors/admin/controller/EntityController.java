@@ -4,14 +4,16 @@ import io.github.singlerr.semaphore.interactors.admin.controller.data.EntityQuer
 
 public interface EntityController {
 
-    void getEntity(EntityQuery.GetEntity query);
+  void getEntity(EntityQuery.GetEntity query);
 
-    void createEntity(EntityQuery.CreateEntity query);
+  void createEntity(EntityQuery.CreateEntity query);
 
-    void deleteEntity(EntityQuery.DeleteEntity query);
+  void createEntity(EntityQuery.CreateEntityWithState query);
 
-    void updateEntity(EntityQuery.UpdateEntity query);
+  void deleteEntity(EntityQuery.DeleteEntity query);
 
-    void getAllEntities(EntityQuery.GetAllEntities query);
+  void updateEntity(EntityQuery.UpdateEntity query);
+
+  void getAllEntities(EntityQuery.GetAllEntities query);
 
 }

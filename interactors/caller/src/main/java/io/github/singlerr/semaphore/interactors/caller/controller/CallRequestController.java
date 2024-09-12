@@ -4,6 +4,6 @@ import io.github.singlerr.semaphore.interactors.caller.controller.data.CallReque
 
 public interface CallRequestController {
 
-    void request(CallRequest request);
+  void request(CallRequest request);
 
 }

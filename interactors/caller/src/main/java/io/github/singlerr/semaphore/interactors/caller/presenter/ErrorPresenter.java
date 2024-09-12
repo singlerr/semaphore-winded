@@ -4,6 +4,6 @@ import io.github.singlerr.semaphore.interactors.caller.presenter.data.Error;
 
 public interface ErrorPresenter {
 
-    void present(Error error);
+  void present(Error error);
 
 }

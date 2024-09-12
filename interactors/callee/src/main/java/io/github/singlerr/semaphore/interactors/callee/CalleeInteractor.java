@@ -6,10 +6,10 @@ import io.github.singlerr.semaphore.interactors.callee.presenter.ErrorHandler;
 
 public interface CalleeInteractor {
 
-    CallResponseManager getResponseManager();
+  CallResponseManager getResponseManager();
 
-    ErrorHandler getErrorPresenter();
+  ErrorHandler getErrorPresenter();
 
-    CallResponsePresenter getResponsePresenter();
+  CallResponsePresenter getResponsePresenter();
 
 }

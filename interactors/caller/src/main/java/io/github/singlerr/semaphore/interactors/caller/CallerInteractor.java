@@ -6,10 +6,10 @@ import io.github.singlerr.semaphore.interactors.caller.presenter.ErrorPresenter;
 
 public interface CallerInteractor {
 
-    CallRequestManager getCallRequestManager();
+  CallRequestManager getCallRequestManager();
 
-    ErrorPresenter getErrorPresenter();
+  ErrorPresenter getErrorPresenter();
 
-    CallRequestPresenter getCallRequestPresenter();
+  CallRequestPresenter getCallRequestPresenter();
 
 }

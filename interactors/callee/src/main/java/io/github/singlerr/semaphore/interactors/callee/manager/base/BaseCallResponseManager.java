@@ -4,19 +4,18 @@ import io.github.singlerr.semaphore.interactors.access.call.CallConnectionHandle
 import io.github.singlerr.semaphore.interactors.access.database.DatabaseGateway;
 import io.github.singlerr.semaphore.interactors.callee.CalleeInteractor;
 import io.github.singlerr.semaphore.interactors.callee.manager.CallResponseManager;
-import io.github.singlerr.semaphore.interactors.callee.manager.data.ResponseType;
 import io.github.singlerr.semaphore.interactors.callee.presenter.ErrorHandler;
-import io.github.singlerr.semaphore.interactors.callee.presenter.data.Error;
 
 public abstract class BaseCallResponseManager implements CallResponseManager {
 
-    protected final DatabaseGateway database;
-    protected final ErrorHandler errorPresenter;
-    protected final CallConnectionHandler callConnectionHandler;
+  protected final DatabaseGateway database;
+  protected final ErrorHandler errorPresenter;
+  protected final CallConnectionHandler callConnectionHandler;
 
-    protected BaseCallResponseManager(DatabaseGateway database, CalleeInteractor interactor, CallConnectionHandler callConnectionHandler){
-        this.database = database;
-        this.errorPresenter = interactor.getErrorPresenter();
-        this.callConnectionHandler = callConnectionHandler;
-    }
+  protected BaseCallResponseManager(DatabaseGateway database, CalleeInteractor interactor,
+                                    CallConnectionHandler callConnectionHandler) {
+    this.database = database;
+    this.errorPresenter = interactor.getErrorPresenter();
+    this.callConnectionHandler = callConnectionHandler;
+  }
 }
