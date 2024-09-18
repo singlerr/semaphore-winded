@@ -1,5 +1,6 @@
 package io.github.singlerr.semaphore.interactors.access.call;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface CallConnectionHandler {
@@ -10,4 +11,5 @@ public interface CallConnectionHandler {
 
   CallConnection getById(UUID connectionId);
 
+  List<CallConnection> getAll();
 }
